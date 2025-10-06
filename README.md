@@ -14,3 +14,48 @@ This system allows users to raise complaints, track their status, and for admins
 ---
 
 ## 📂 Project Structure
+ComplaintTrackingSystem/
+├── backend/ # Spring Boot backend (API + Security + Database)
+└── frontend/ # React frontend (UI + API integration)
+
+
+---
+
+## ⚙️ How to Run
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/<your-username>/ComplaintTrackingSystem.git
+cd ComplaintTrackingSystem
+
+2. Run Backend (Spring Boot)
+cd backend
+mvn spring-boot:run
+
+
+Backend runs on: http://localhost:8080
+
+3. Run Frontend (React)
+cd frontend
+npm install
+npm start
+
+
+Frontend runs on: http://localhost:3000
+
+🔐 Authentication
+
+Register: POST /api/auth/register
+
+Login: POST /api/auth/login → returns JWT
+
+Use JWT for secure endpoints:
+
+Authorization: Bearer <your-token>
+
+
+Roles:
+
+USER → create/view complaints
+
+ADMIN → manage complaints (close/reopen)
